@@ -1,0 +1,12 @@
+.jumbotron { 
+    background-image: url('../../../assets/images/banner1-3050x715.jpg');
+    background-repeat: no-repeat;
+    margin-bottom: 0px;
+}
+nav {
+    margin-bottom: 30px;
+}
+
+.navbar-brand {
+    color: #ffbb33;
+}

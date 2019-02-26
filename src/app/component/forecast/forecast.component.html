@@ -1,0 +1,63 @@
+<div class=container>
+  <h2 class="forecast_heading">Current weather and forecast in your city</h2>
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="weather_info_aside" *ngIf="currentCityInfo">
+        <span>
+          <div class="weather_table_heading_aside">
+            <h2 class="weather_city_aside">Weather in {{currentCityInfo.city.name}},{{currentCityInfo.city.country}}</h2>
+            <h3 class="weather_city_temp_aside"><img src="http://openweathermap.org/img/w/{{currentCityInfo.list[0].weather[0].icon}}.png">{{currentCityInfo.list[0].main.temp}}&#176;C</h3>
+            <p class="weather_city_description_aside">{{currentCityInfo.list[0].weather[0].description | titlecase}}</p>
+            <p>{{currentCityInfo.list[0].dt_txt}}</p>
+          </div>
+          <table class="table-bordered table-striped">
+            <tbody>
+              <tr>
+                <td>Wind</td>
+                <td>{{windDescription}},{{currentCityInfo.list[0].wind.speed}}m/s,
+                  <p>{{currentCityInfo.list[0].wind.deg}}&#176;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>Cloudiness</td>
+                <td>{{cloudDescription}}</td>
+              </tr>
+              <tr>
+                <td>Pressure</td>
+                <td>{{currentCityInfo.list[0].main.pressure}} hpa</td>
+              </tr>
+              <tr>
+                <td>Humidity</td>
+                <td>{{currentCityInfo.list[0].main.humidity}}%</td>
+              </tr>
+              <tr>
+                <td>Sunrise</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Sunset</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Geo Coord</td>
+                <td class="coord">[{{currentCityInfo.city.coord.lon}} , {{currentCityInfo.city.coord.lat}}]</td>
+              </tr>
+            </tbody>
+          </table>
+        </span>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <nav>
+        <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+          <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" [routerLink]="['main']" routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }">Main</a>
+          <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" [routerLink]="['daily']" >Daily</a>
+          <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" routerLink="hourly">Hourly</a>
+          <a class="nav-item nav-link" id="nav-about-tab" data-toggle="tab" routerLink="chart">Map</a>
+        </div>
+      </nav>
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

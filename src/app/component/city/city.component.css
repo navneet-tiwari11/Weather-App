@@ -1,0 +1,29 @@
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+td a{
+    color:#428bca;
+    cursor: pointer;
+}
+td a:hover{
+    color: #428bca;
+    text-decoration: underline;
+}
+.badge {
+    background-color: #999
+}
+
+form input {
+    border-color: #f39c12;
+}
+
+form input:focus {
+    border:2px solid #f39c12;
+    box-shadow: none;
+}
+
+form button {
+    border-color: #f39c12;
+    background-color: #f39c12;
+}

@@ -1,0 +1,9 @@
+<div id="content" class="daily-heading">
+    <h2>Daily weather and forecasts in {{cityName}} {{countryName}}</h2>
+      <button type="button" class="btn btn-primary btn-md" style="float:right" (click)="captureScreen()">
+          <i class="fas fa-file-pdf"></i> Export
+      </button>
+<div class="tab-pane fade show">
+  <canvas id="lineChart">{{LineChart}}</canvas>
+</div>
+</div>

@@ -1,0 +1,20 @@
+<div class="hourly-heading">
+  <h2>Hourly weather and forecasts in Berlin, DE</h2>
+  <table class="hourly-forecast-table" *ngFor="let key of key">
+    <thead>
+      <th class="hourly-table-header" colspan="2">{{key}}</th>
+    </thead>
+    <tbody >
+      <tr *ngFor="let data of jsonObj[key]; let i=index">
+        <td class="hourly-subItem" style="width: 221px">{{time[i]}}<img src="http://openweathermap.org/img/w/{{data.weather[0].icon}}.png"></td>
+        <td class="hourly-subItem">
+            <p><span class="badge badge-info">{{data.main.temp | number: '.0-1' }}°С </span>
+              <i>{{data.weather[0].description}}</i></p>
+            <p>{{data.wind.speed}} m/s.
+              clouds {{data.clouds.all}} %, {{data.main.pressure}} hpa
+            </p>
+          </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
